@@ -1,0 +1,25 @@
+enabled: false
+name: ""
+annotations:
+  {}
+  # kubernetes.io/ingress.class: ingress-class
+  # kubernetes.io/tls-acme: "true"
+
+# hosts:
+  # - host: subdomain.domain.com
+  #   paths:
+  #     - path: /
+  #       pathType: Prefix
+  #       backend:
+  #         service:
+  #           name: service-name
+  #           port:
+  #             number: 80
+hosts: []
+
+# tls:
+#   - hosts:
+#       - "domain.com"
+#       - "*.domain.com"
+#     secretName: tls-secret
+tls: []

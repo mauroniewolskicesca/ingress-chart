@@ -1,0 +1,14 @@
+apiVersion: v1
+entries:
+  ingress:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2023-02-05T00:18:03.79548Z"
+    description: A simple ingress helm chart
+    digest: 70da16b16df434a5f8653be0727d12bbdb14569739d227e549e312ccc6776c0f
+    name: ingress
+    type: application
+    urls:
+    - https://mauroniewolskicesca.github.io/ingress-chart/ingress-0.1.0.tgz
+    version: 0.1.0
+generated: "2023-02-05T00:18:03.795156Z"

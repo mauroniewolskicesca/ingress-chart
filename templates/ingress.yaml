@@ -1,0 +1,32 @@
+{{- if .Values.enabled -}}
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ include "name" . }}-ingress
+  labels:
+  {{- include "labels" . | nindent 4 }}
+spec:
+  rules:
+    {{- range .Values.hosts }}
+    - host: {{ .host | quote }}
+      http:
+        paths:
+          {{- range .paths }}
+          - path: {{ .path }}
+            pathType: {{ .pathType }}
+            backend:
+              service:
+                name: {{ .backend.service.name }}
+                port:
+                  number: {{ .backend.service.port.number }}
+          {{- end }}
+    {{- end }}
+  tls:
+    {{- range .Values.tls }}
+    - hosts:
+        {{- range .hosts }}
+        - {{ . | quote }}
+        {{- end }}
+      secretName: {{ .secretName }}
+    {{- end }}
+ {{- end }}
